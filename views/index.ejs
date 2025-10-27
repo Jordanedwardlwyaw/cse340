@@ -4,24 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dream Motors</title>
-  <link rel="stylesheet" href="../public/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <header>
-    <!-- Replace logo text with an image -->
-    <div class="logo">
-      <img src="/images/logo.jpg" alt="Dream Motors Logo">
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="vehicles.html" class="active">Vehicles</a></li>
-        <li><a href="contact.html">contact</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+  <%- include('partials/header', { page: 'home' }) %>
 
   <main>
     <section class="hero">
@@ -30,7 +16,6 @@
       <a href="#explore" class="btn">Explore Vehicles</a>
     </section>
 
-    <!-- Explore Section with Car Images -->
     <section id="explore" class="explore-section">
       <h2>Explore Our Latest Cars</h2>
       <div class="car-gallery">
@@ -50,8 +35,6 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Dream Motors | All Rights Reserved.</p>
-  </footer>
+  <%- include('partials/footer') %>
 </body>
 </html>
