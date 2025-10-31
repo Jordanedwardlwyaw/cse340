@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dream Motors</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
+<%- include('partials/head') %>
 <body>
-  <%- include('partials/header', { page: 'home' }) %>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to Dream Motors</h1>
-      <p>Your trusted destination for quality vehicles and services.</p>
-      <a href="#explore" class="btn">Explore Vehicles</a>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Welcome to CSE Motors</h1>
+            <p>Your trusted destination for quality vehicles and services.</p>
+            <a href="/vehicles" class="btn">Explore Vehicles</a>
+        </section>
 
-    <section id="explore" class="explore-section">
-      <h2>Explore Our Latest Cars</h2>
-      <div class="car-gallery">
-        <div class="car-card">
-          <img src="/images/car1.jpg" alt="Car 1">
-          <p>Luxury SUV</p>
-        </div>
-        <div class="car-card">
-          <img src="/images/car2.jpg" alt="Car 2">
-          <p>Sport Coupe</p>
-        </div>
-        <div class="car-card">
-          <img src="/images/car3.jpg" alt="Car 3">
-          <p>Sedan Comfort</p>
-        </div>
-      </div>
-    </section>
-  </main>
+        <section class="featured-cars">
+            <h2>Explore Our Latest Cars</h2>
+            <div class="cars">
+                <div class="car-card">
+                    <img src="/images/car1.jpg" alt="Luxury SUV">
+                    <h3>Luxury SUV</h3>
+                </div>
+                <div class="car-card">
+                    <img src="/images/car2.jpg" alt="Sport Coupe">
+                    <h3>Sport Coupe</h3>
+                </div>
+                <div class="car-card">
+                    <img src="/images/car3.jpg" alt="Sedan Comfort">
+                    <h3>Sedan Comfort</h3>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <%- include('partials/footer') %>
+    <%- include('partials/footer') %>
+    <script src="/js/header.js"></script>
 </body>
 </html>

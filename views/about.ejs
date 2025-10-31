@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Dream Motors</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
+<%- include('partials/head') %>
 <body>
-  <%- include('partials/header', { page: 'about' }) %>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
 
-  <main>
-    <section class="hero">
-      <h1>About Dream Motors</h1>
-      <p>Learn more about our mission and values in providing top-quality vehicles.</p>
-    </section>
-  </main>
+    <main>
+        <section class="about-section">
+            <h1>About CSE Motors</h1>
+            <p>CSE Motors has been serving customers with high-quality vehicles for over 20 years. Our mission is to provide excellent service, trusted vehicles, and a great buying experience for everyone.</p>
+            <p>We offer a wide variety of cars to meet every need, from luxury SUVs to compact sedans.</p>
+        </section>
+    </main>
 
-  <%- include('partials/footer') %>
+    <%- include('partials/footer') %>
 </body>
 </html>

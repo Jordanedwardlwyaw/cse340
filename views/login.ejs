@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Dream Motors</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
+<%- include('partials/head') %>
 <body>
-  <%- include('partials/header', { page: 'login' }) %>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
 
-  <main>
-    <section class="hero">
-      <h1>Login</h1>
-      <p>Access your account to explore vehicles and services.</p>
-    </section>
-  </main>
+    <main>
+        <section class="login-section">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
 
-  <%- include('partials/footer') %>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
 </body>
 </html>

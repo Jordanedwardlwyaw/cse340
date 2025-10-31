@@ -1,21 +1,33 @@
-/* ---------------- Logo & Navbar ---------------- */
-body {
+/* =========================
+   Dream Motors - styles.css
+   ========================= */
+
+/* ----------- Global Styles ----------- */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
 }
 
+/* ----------- Header & Navbar ----------- */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
   background-color: #111;
   color: #fff;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo img {
@@ -23,45 +35,77 @@ header {
   height: auto;
 }
 
-nav ul {
+/* Navbar Links */
+.nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
 }
 
-nav ul li a {
+.nav-links a {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #f39c12; /* accent color on hover */
+.nav-links a:hover {
+  color: #f39c12;
 }
 
-/* ---------------- Hero Section ---------------- */
+/* Active Link */
+.nav-links a.active {
+  color: #f39c12;
+  border-bottom: 2px solid #f39c12;
+  padding-bottom: 4px;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ----------- Hero Section ----------- */
 .hero {
   text-align: center;
   padding: 6rem 2rem;
-  background: linear-gradient(120deg, #f39c12, #e67e22);
+  background: linear-gradient(135deg, #f39c12, #e67e22);
   color: #fff;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
-/* ---------------- Explore Vehicles Section ---------------- */
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #e67e22;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* ----------- Explore Vehicles Section ----------- */
 .explore-section {
   text-align: center;
   padding: 4rem 2rem;
@@ -73,6 +117,7 @@ nav ul li a:hover {
   margin-bottom: 2.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  color: #111;
 }
 
 /* Car Gallery */
@@ -113,21 +158,52 @@ nav ul li a:hover {
   color: #111;
 }
 
-/* ---------------- Footer ---------------- */
+/* ----------- Footer ----------- */
 footer {
   text-align: center;
   padding: 2rem;
   background-color: #111;
   color: #fff;
   font-size: 0.9rem;
+  margin-top: 4rem;
 }
 
-/* ---------------- Responsive ---------------- */
+footer p {
+  margin: 0.3rem 0;
+}
+
+/* ----------- Responsive Design ----------- */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .car-gallery {
+  /* Navbar */
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    display: none;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .hero h1 {
@@ -138,8 +214,8 @@ footer {
     font-size: 2rem;
   }
 
-  nav ul {
+  .car-gallery {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
   }
 }

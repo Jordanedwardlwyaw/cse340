@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Dream Motors</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
+<%- include('partials/head') %>
 <body>
-  <%- include('partials/header', { page: 'contact' }) %>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
 
-  <main>
-    <section class="hero">
-      <h1>Contact Us</h1>
-      <p>Get in touch with Dream Motors for inquiries, support, or feedback.</p>
-    </section>
-  </main>
+    <main>
+        <section class="contact-section">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or need assistance, feel free to contact us:</p>
+            <form action="/contact" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-  <%- include('partials/footer') %>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
 </body>
 </html>
